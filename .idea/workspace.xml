@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="299e5035-d596-4042-8dc4-dedc2a8c624f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Block.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Block.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Blockchain.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Blockchain.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/UTXO.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/UTXO.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/UTXOPool.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/UTXOPool.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/lesson1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/lesson1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/lesson2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/lesson2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/lesson3.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/lesson3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils.js" beforeDir="false" />
-    </list>
+    <list default="true" id="299e5035-d596-4042-8dc4-dedc2a8c624f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
