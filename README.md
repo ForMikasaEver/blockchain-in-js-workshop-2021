@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream
 # 实验报告模板
-=======
 # ---------------------------实验报告模板-----------------------
->>>>>>> Stashed changes
-
 ## 小组成员
 
 - 2021131104-罗嘉 （组长）
@@ -52,8 +48,11 @@ https://github.com/ForMikasaEver/blockchain-in-js-workshop-2021/commit/76ac386b9
 ### 代码截图
 
 >  ![iY6fXE.png](https://i.328888.xyz/2023/05/10/iY6fXE.png)
+>  
 >  ![iY6V0Q.png](https://i.328888.xyz/2023/05/10/iY6V0Q.png)
+>  
 >  ![iY6yKC.png](https://i.328888.xyz/2023/05/10/iY6yKC.png)
+>  
 >  ![iY6ADP.png](https://i.328888.xyz/2023/05/10/iY6ADP.png)
 
 
@@ -115,8 +114,6 @@ https://github.com/ForMikasaEver/blockchain-in-js-workshop-2021/commit/1866b2367
 - 节能矿机和绿色能源：开发和使用节能的矿机设备，结合使用可再生的绿色能源，可以减少挖矿对环境的影响，并提高挖矿的效率。
 
 通过这些技术手段，可以在一定程度上提高挖矿的效率，使得整个区块链网络更加可靠、可扩展和环保。
->>>>>>> Stashed changes
-
 ---
 
 
@@ -125,14 +122,12 @@ https://github.com/ForMikasaEver/blockchain-in-js-workshop-2021/commit/1866b2367
 
 ### 代码 commint 地址
 
-https://github.com/CUITBlockchain/blockchain-in-js-workshop-2021/commit/25f3a0d83a9fff2b4514c5503f470df939d0c2af
+https://github.com/ForMikasaEver/blockchain-in-js-workshop-2021/commit/f1ae68433251121f7e78f629ca64bc5c98510b3c
 
 
 ### 代码截图
 
-> 将截图上传至网盘，放入链接即可
-
-![](链接)
+![VUVaRP.png](https://i.imgloc.com/2023/05/26/VUVaRP.png)
 
 
 ### 主观与讨论题内容
