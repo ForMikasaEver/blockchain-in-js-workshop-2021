@@ -61,7 +61,7 @@ const main = () => {
       blockchain,
       nextBlock.hash,
       3,
-      sha256(new Date().getTime().toString()).toString(),
+      sha256(new Date().getTime().toString()).toString()
   )
 
   thirdBlock = calcNonce(thirdBlock)
@@ -70,8 +70,7 @@ const main = () => {
 
   longestChain = blockchain.longestChain()
 
-  console.log(blockchain)
-  console.log(longestChain)
+  // console.log(blockchain)
 
   // 区块检查
   console.assert(longestChain.length === 3, 'Block height should be 2')
@@ -91,13 +90,13 @@ const main = () => {
   console.assert(
       thirdBlock.utxoPool.utxos[miner] &&
       thirdBlock.utxoPool.utxos[miner].amount > 0,
-      'Error: miner should got BTC',
+      'Error: miner should got BTC-1',
   )
 
   console.assert(
       thirdBlock.utxoPool.utxos[miner] &&
       thirdBlock.utxoPool.utxos[miner].amount === 37.5,
-      'Error: miner should got BTC',
+      'Error: miner should got BTC-2',
   )
 }
 

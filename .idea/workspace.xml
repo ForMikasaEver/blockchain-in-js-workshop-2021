@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="299e5035-d596-4042-8dc4-dedc2a8c624f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/crypto-currency-report.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/validators/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/Block.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Block.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/Blockchain.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Blockchain.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/UTXO.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/UTXO.js" afterDir="false" />
@@ -20,7 +14,6 @@
       <change beforePath="$PROJECT_DIR$/src/tests/lesson2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/lesson2.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tests/lesson3.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/lesson3.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,21 +31,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;lesson3&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/GitHub/blockchain-in-js-workshop-2021&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "fme-lesson1",
+    "last_opened_file_path": "D:/GitHub/blockchain-in-js-workshop-2021",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\GitHub\blockchain-in-js-workshop-2021\src\validators" />
@@ -85,10 +78,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Node.js.lesson3.js" />
-        <item itemvalue="Node.js.UTXOPool.js" />
-        <item itemvalue="npm.check:lesson3" />
         <item itemvalue="Node.js.lesson2.js" />
         <item itemvalue="Node.js.lesson1.js" />
+        <item itemvalue="Node.js.UTXOPool.js" />
+        <item itemvalue="npm.check:lesson3" />
       </list>
     </recent_temporary>
   </component>
