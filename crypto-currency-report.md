@@ -21,14 +21,12 @@ https://github.com/ForMikasaEver/blockchain-in-js-workshop-2021
 
 ### 代码 commint 地址
 
-https://github.com/CUITBlockchain/blockchain-in-js-workshop-2021/commit/25f3a0d83a9fff2b4514c5503f470df939d0c2af
+https://github.com/ForMikasaEver/blockchain-in-js-workshop-2021/blob/fme-lesson1/src/cryptoCurrency/MerkleTree.js
 
 
 ### 代码截图
 
-> 将截图上传至网盘，放入链接即可
-
-![](链接)
+![Vkq6YJ.png](https://i.imgloc.com/2023/06/02/Vkq6YJ.png)
 
 
 ### 主观与讨论题内容
