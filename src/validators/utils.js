@@ -1,6 +1,10 @@
 import sha256 from 'crypto-js/sha256.js'
 
-export const validateHash = () => {}
+export const validateHash = (hash) => {
+  if (hash.length === 0 || !hash) return false
+
+  return hash.length === 64
+}
 
 export const calcNonce = (block) => { // 定义一个名为 calcNonce 的常量，其值为一个接受一个 Block 对象作为参数的函数
   console.log(`calc nonce of block ${block.height} `)

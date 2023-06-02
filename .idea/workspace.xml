@@ -4,11 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="299e5035-d596-4042-8dc4-dedc2a8c624f" name="Changes" comment="" />
+    <list default="true" id="299e5035-d596-4042-8dc4-dedc2a8c624f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/models/Transaction.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/lesson4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/UTXOPool.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/UTXOPool.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/lesson1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/lesson1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/lesson2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/lesson2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/lesson3.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/lesson3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/validators/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/validators/utils.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -27,6 +43,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "fme-lesson1",
+    "javascript.nodejs.core.library.configured.version": "18.16.0",
+    "javascript.nodejs.core.library.typings.version": "18.16.0",
     "last_opened_file_path": "D:/GitHub/blockchain-in-js-workshop-2021",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -41,8 +59,8 @@
       <recent name="D:\GitHub\blockchain-in-js-workshop-2021\src\validators" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.lesson3.js">
-    <configuration name="UTXOPool.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/models/UTXOPool.js" working-dir="$PROJECT_DIR$/src/models">
+  <component name="RunManager" selected="Node.js.MerkleTree.js">
+    <configuration name="MerkleTree.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/cryptoCurrency/MerkleTree.js" working-dir="$PROJECT_DIR$/src/cryptoCurrency">
       <method v="2" />
     </configuration>
     <configuration name="lesson1.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/tests/lesson1.js" working-dir="$PROJECT_DIR$/src/tests">
@@ -54,24 +72,16 @@
     <configuration name="lesson3.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/tests/lesson3.js" working-dir="$PROJECT_DIR$/src/tests">
       <method v="2" />
     </configuration>
-    <configuration name="check:lesson3" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="check:lesson3" />
-      </scripts>
-      <node-interpreter value="project" />
-      <package-manager value="npm" />
-      <envs />
+    <configuration name="lesson4.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/tests/lesson4.js" working-dir="$PROJECT_DIR$/src/tests">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.MerkleTree.js" />
+        <item itemvalue="Node.js.lesson4.js" />
         <item itemvalue="Node.js.lesson3.js" />
         <item itemvalue="Node.js.lesson2.js" />
         <item itemvalue="Node.js.lesson1.js" />
-        <item itemvalue="Node.js.UTXOPool.js" />
-        <item itemvalue="npm.check:lesson3" />
       </list>
     </recent_temporary>
   </component>
@@ -89,6 +99,10 @@
       <workItem from="1684828255793" duration="4000" />
       <workItem from="1684931677418" duration="3426000" />
       <workItem from="1685013072930" duration="5387000" />
+      <workItem from="1685087442978" duration="646000" />
+      <workItem from="1685358466646" duration="1154000" />
+      <workItem from="1685621544775" duration="1292000" />
+      <workItem from="1685668528484" duration="7695000" />
     </task>
     <servers />
   </component>
