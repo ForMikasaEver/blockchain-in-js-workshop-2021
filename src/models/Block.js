@@ -1,12 +1,12 @@
 import sha256 from 'crypto-js/sha256.js'
-
+import UTXOPool from "./UTXOPool.js";
 
 export const DIFFICULTY = 2 // 难度常量 DIFFICULTY，用于指定哈希值的前缀中 0 的数量
 
 class Block {
   // 1. 完成构造函数及其参数
 
-  constructor(blockChain, previousHash, height, hash, coinbaseBeneficiary, nonce) {
+  constructor(blockChain, previousHash, height, hash, coinbaseBeneficiary, nonce, transactions) {
     this.blockChain = blockChain;  // 区块链对象
     this.previousHash = previousHash;  // 前一个区块的哈希值
     this.height = height;  // 区块的高度
@@ -14,6 +14,7 @@ class Block {
     this.coinbaseBeneficiary = coinbaseBeneficiary; // 添加coinbaseBeneficiary属性用于存储币库收益地址（一般是矿工地址）
     this.nonce = nonce;  // 添加一个nonce属性用于存储区块的随机数
     this.utxoPool = blockChain.utxoPool.clone(); // 添加utxoPool属性用于存储未使用的交易输出池
+    this.transactions = transactions || []
   }
 
 
@@ -33,7 +34,7 @@ class Block {
    如果哈希值的前缀中包含至少 DIFFICULTY 个 0，则认为该哈希值满足要求
    */
   isValid() {
-    const hash = this.calculateHash()
+    const hash = sha256(this.previousHash + this.height + this.nonce).toString()
     return hash.substring(0, DIFFICULTY) === '0'.repeat(DIFFICULTY)
   }
 
@@ -42,13 +43,46 @@ class Block {
     this.nonce = nonce
   }
 
-  // 计算当前区块的哈希值
-  calculateHash() {
-    return sha256(
-        this.previousHash + this.height + this.nonce
-    ).toString()
+  // 根据交易变化更新区块 hash
+  // _setHash() {
+  //
+  // }
+
+  /**
+   * 添加计算交易 hash 的函数 combinedTransactionsHash
+   * 要求能够根据区块添加的交易更新整个 Hash 值
+   *
+   */
+  combinedTransactionsHash() {
+    let combinedHash = '';
+
+    for (const hash1 of this.transactions) {
+      combinedHash += this.transactions;
+    }
+
+    return this.hash = sha256(this.previousHash + this.height + this.nonce + combinedHash).toString();
   }
 
+  /**
+   * 添加交易并处理交易函数 addTransaction
+   * 要求进行交易的验证
+   * 将符合要求的交易更新⾄当前区块的 UTOXPool 交易池中
+   * 需包含 UTXOPool 的更新与 hash 的更新
+   */
+  addTransaction(transaction) {
+    // 这行语句一定要加在if前面，不然不符合规则的交易会自动略过，比如lesson5里面的badtrx
+    this.transactions.push(transaction.hash)
+
+    if (!this.utxoPool.isValidTransaction(transaction.miner, transaction.value)) {
+      return false;
+    }
+
+    this.utxoPool.handleTransaction(transaction);
+
+    this.hash = sha256(this.previousHash + this.height + this.nonce + transaction.hash).toString();
+
+    return true;
+  }
 }
 
 export default Block

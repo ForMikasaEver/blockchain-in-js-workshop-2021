@@ -89,6 +89,7 @@ const main = () => {
     )
 
     const latestUTXOPool = thirdBlock.utxoPool
+
     log(latestUTXOPool)
 
     assert(
@@ -122,13 +123,13 @@ const main = () => {
 
     assert(
         latestUTXOPool.utxos[miner] && latestUTXOPool.utxos[miner].amount === 36.5,
-        'Error: miner should got right balance',
+        'Error: miner should got right balance1',
     )
 
     assert(
         latestUTXOPool.utxos[receiverPubKey] &&
         latestUTXOPool.utxos[receiverPubKey].amount === 1,
-        'Error: receiver should got right balance',
+        'Error: receiver should got right balance1',
     )
 
     // 打印最新的 UTXO pool
@@ -137,14 +138,15 @@ const main = () => {
     let badTrx = new Transaction(miner, receiverPubKey, 100)
 
     // 对比更新交易之后的 hash 数据
-    let trxHash = thirdBlock.combinedTransactionsHash().toString()
+     let trxHash = thirdBlock.combinedTransactionsHash().toString()
+
     thirdBlock.addTransaction(badTrx)
 
     assert(trxHash !== thirdBlock.combinedTransactionsHash().toString(), 'Error: new trx cannot have same hash')
 
     assert(
         latestUTXOPool.utxos[miner] && latestUTXOPool.utxos[miner].amount === 36.5,
-        'Error: miner should got right balance',
+        'Error: miner should got right balance2',
     )
 
     assert(
@@ -155,7 +157,7 @@ const main = () => {
     assert(
         latestUTXOPool.utxos[receiverPubKey] &&
         latestUTXOPool.utxos[receiverPubKey].amount === 1,
-        'Error: receiver should got right balance',
+        'Error: receiver should got right balance2',
     )
 }
 

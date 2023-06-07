@@ -1,5 +1,4 @@
 import sha256 from 'crypto-js/sha256.js'
-import t from "ramda/src/T.js";
 
 
 class Transaction {
