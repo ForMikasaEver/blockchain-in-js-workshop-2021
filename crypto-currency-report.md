@@ -48,7 +48,7 @@ https://github.com/ForMikasaEver/blockchain-in-js-workshop-2021/blob/fme-lesson1
 
 ### 代码截图
 
-![https://cdn.staticaly.com/gh/LBiyou/BlogImages@main/img/202306072301620.png](链接)
+![https://s1.vika.cn/space/2023/06/07/31a4afdd87d04caa953a472cdc49a31e](链接)
 
 
 ### 主观与讨论题内容
