@@ -94,9 +94,7 @@ https://github.com/ForMikasaEver/blockchain-in-js-workshop-2021/blob/fme-lesson1
 
 ### 代码截图
 
-> 将截图上传至网盘，放入链接即可
-
-![]([![VwFkYP.jpeg](https://i.imgloc.com/2023/06/08/VwFkYP.jpeg)](https://imgloc.com/i/VwFkYP))
+![](https://i.imgloc.com/2023/06/08/VwFkYP.jpeg)
 
 
 ### 主观与讨论题内容
