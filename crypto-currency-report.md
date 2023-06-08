@@ -31,6 +31,7 @@ https://github.com/ForMikasaEver/blockchain-in-js-workshop-2021/blob/fme-lesson1
 ### 主观与讨论题内容
 实现加分项内容添加默克尔树后更新了两个函数addTransaction（） combinedTransactionsHash(),还有构造函数：this.merkleRoot = null; // Merkle树的根哈希值:
 
+```js
  import sha256 from 'crypto-jsa256.js'
 import { MerkleTree } from 'merkletreejs';
 import { createHash } from 'crypto';
