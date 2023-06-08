@@ -29,6 +29,87 @@ https://github.com/ForMikasaEver/blockchain-in-js-workshop-2021/blob/fme-lesson1
 ![Vkq6YJ.png](https://i.imgloc.com/2023/06/02/Vkq6YJ.png)
 
 ### 主观与讨论题内容
+实现加分项内容添加默克尔树后更新了两个函数addTransaction（） combinedTransactionsHash(),还有构造函数：this.merkleRoot = null; // Merkle树的根哈希值:
+
+ import sha256 from 'crypto-jsa256.js'
+import { MerkleTree } from 'merkletreejs';
+import { createHash } from 'crypto';
+
+import UTXOPool from "./UTXOPool.js";
+
+export const DIFFICULTY = 2 // 难度常量 DIFFICULTY，用于指定哈希值的前缀中 0 的数量
+
+class Block {
+  // 1. 完成构造函数及其参数
+
+  constructor(blockChain, previousHash, height, hash, coinbaseBeneficiary, nonce, transactions) {
+    this.blockChain = blockChain;  // 区块链对象
+    this.previousHash = previousHash;  // 前一个区块的哈希值
+    this.height = height;  // 区块的高度
+    this.hash = hash;  // 区块的哈希值
+    this.coinbaseBeneficiary = coinbaseBeneficiary; // 添加coinbaseBeneficiary属性用于存储币库收益地址（一般是矿工地址）
+    this.nonce = nonce;  // 添加一个nonce属性用于存储区块的随机数
+    this.utxoPool = blockChain.utxoPool.clone(); // 添加utxoPool属性用于存储未使用的交易输出池
+    this.transactions = transactions || []
+    this.merkleRoot = null; // Merkle树的根哈希值
+  }
+
+
+    isValid() {
+    const hash = sha256(this.previousHash + this.height + this.nonce).toString()
+    return hash.substring(0, DIFFICULTY) === '0'.repeat(DIFFICULTY)
+  }
+
+  // setNonce(nonce) 方法用于设置当前区块的随机数属性
+  setNonce(nonce) {
+    this.nonce = nonce
+  }
+
+  // 根据交易变化更新区块 hash
+  // _setHash() {
+  //
+  // }
+
+  /**
+   * 添加计算交易 hash 的函数 combinedTransactionsHash
+   * 要求能够根据区块添加的交易更新整个 Hash 值
+   *
+   */
+  combinedTransactionsHash() {
+    const transactionHashes = this.transactions.map(transaction => transaction.hash);
+    const merkleTree = new MerkleTree(transactionHashes, (value) => createHash('sha256').update(value).digest());
+
+    const merkleRoot = merkleTree.getRoot();
+    this.merkleRoot = merkleRoot.toString('hex');
+
+    return this.hash = sha256(this.previousHash + this.height + this.nonce + this.merkleRoot).toString();
+  }
+
+
+  /**
+   * 添加交易并处理交易函数 addTransaction
+   * 要求进行交易的验证
+   * 将符合要求的交易更新⾄当前区块的 UTOXPool 交易池中
+   * 需包含 UTXOPool 的更新与 hash 的更新
+   */
+  addTransaction(transaction) {
+
+      this.transactions.push(transaction);
+
+      if (!this.utxoPool.isValidTransaction(transaction.miner, transaction.value)) {
+        return false;
+      }
+
+      this.utxoPool.handleTransaction(transaction);
+
+      this.combinedTransactionsHash();
+
+      return true;
+    }
+
+}
+
+export default Block
 
 
 ---
