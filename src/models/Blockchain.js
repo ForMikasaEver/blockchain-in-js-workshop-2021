@@ -2,12 +2,12 @@ import UTXOPool from './UTXOPool.js'
 import block from "./Block.js"
 
 class Blockchain {
-    // 1. 完成构造函数及其参数
-    /* 构造函数需要包含
-        - 名字
-        - 创世区块
-        - 存储区块的映射
-    */
+    /** 1. 完成构造函数及其参数
+     * 构造函数需要包含
+     *         - 名字
+     *         - 创世区块
+     *         - 存储区块的映射
+     */
     constructor(name) {
         this.name = name;
         this.genesis = null;

@@ -5,6 +5,8 @@
   "dependencies": {
     "crypto-js": "^3.3.0",
     "elliptic": "^6.4.0",
+    "merkle-lib": "^2.0.10",
+    "merkletreejs": "^0.3.10",
     "ramda": "^0.25.0"
   },
   "scripts": {

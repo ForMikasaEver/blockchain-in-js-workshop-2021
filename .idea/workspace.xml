@@ -5,16 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="299e5035-d596-4042-8dc4-dedc2a8c624f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/cryptoCurrency/MPT.cjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cryptoCurrency/MerkleTree.cjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cryptoCurrency/Trie.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/lesson6.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crypto-currency-report.md" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-currency-report.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cryptoCurrency/MerkleTree.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cryptoCurrency/MPT.cjs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cryptoCurrency/MPT.cjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cryptoCurrency/Trie.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cryptoCurrency/Trie.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/Block.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Block.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Blockchain.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Blockchain.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/Transaction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Transaction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/UTXOPool.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/UTXOPool.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tests/lesson5.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/lesson5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,29 +64,29 @@
       <recent name="D:\GitHub\blockchain-in-js-workshop-2021\src\validators" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.lesson5.js">
+  <component name="RunManager" selected="Node.js.lesson6.js">
     <configuration name="MPT.cjs" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/cryptoCurrency/MPT.cjs" working-dir="$PROJECT_DIR$/src/cryptoCurrency">
-      <method v="2" />
-    </configuration>
-    <configuration name="MerkleTree.cjs" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/cryptoCurrency/MerkleTree.cjs" working-dir="$PROJECT_DIR$/src/cryptoCurrency">
       <method v="2" />
     </configuration>
     <configuration name="Trie.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/cryptoCurrency/Trie.js" working-dir="$PROJECT_DIR$/src/cryptoCurrency">
       <method v="2" />
     </configuration>
+    <configuration name="lesson4.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/tests/lesson4.js" working-dir="$PROJECT_DIR$/src/tests">
+      <method v="2" />
+    </configuration>
     <configuration name="lesson5.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/tests/lesson5.js" working-dir="$PROJECT_DIR$/src/tests">
       <method v="2" />
     </configuration>
-    <configuration name="test.cjs" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/cryptoCurrency/test.cjs" working-dir="$PROJECT_DIR$/src/cryptoCurrency">
+    <configuration name="lesson6.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/tests/lesson6.js" working-dir="$PROJECT_DIR$/src/tests">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.lesson6.js" />
         <item itemvalue="Node.js.lesson5.js" />
-        <item itemvalue="Node.js.Trie.js" />
+        <item itemvalue="Node.js.lesson4.js" />
         <item itemvalue="Node.js.MPT.cjs" />
-        <item itemvalue="Node.js.MerkleTree.cjs" />
-        <item itemvalue="Node.js.test.cjs" />
+        <item itemvalue="Node.js.Trie.js" />
       </list>
     </recent_temporary>
   </component>
@@ -111,7 +114,10 @@
       <workItem from="1685955009414" duration="2983000" />
       <workItem from="1685958101138" duration="5115000" />
       <workItem from="1686033489966" duration="433000" />
-      <workItem from="1686136103510" duration="7169000" />
+      <workItem from="1686136103510" duration="9261000" />
+      <workItem from="1686233890483" duration="2200000" />
+      <workItem from="1686308572286" duration="2115000" />
+      <workItem from="1686310722502" duration="9841000" />
     </task>
     <servers />
   </component>

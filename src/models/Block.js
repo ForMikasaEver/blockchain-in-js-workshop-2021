@@ -1,4 +1,7 @@
 import sha256 from 'crypto-js/sha256.js'
+import { MerkleTree } from 'merkletreejs';
+import { createHash } from 'crypto';
+
 import UTXOPool from "./UTXOPool.js";
 
 export const DIFFICULTY = 2 // 难度常量 DIFFICULTY，用于指定哈希值的前缀中 0 的数量
@@ -15,6 +18,7 @@ class Block {
     this.nonce = nonce;  // 添加一个nonce属性用于存储区块的随机数
     this.utxoPool = blockChain.utxoPool.clone(); // 添加utxoPool属性用于存储未使用的交易输出池
     this.transactions = transactions || []
+    this.merkleRoot = null; // Merkle树的根哈希值
   }
 
 
@@ -61,7 +65,17 @@ class Block {
     }
 
     return this.hash = sha256(this.previousHash + this.height + this.nonce + combinedHash).toString();
+
+    // 基于默克尔树实现，还没看懂
+    // const transactionHashes = this.transactions.map(transaction => transaction.hash);
+    // const merkleTree = new MerkleTree(transactionHashes, (value) => createHash('sha256').update(value).digest());
+    //
+    // const merkleRoot = merkleTree.getRoot();
+    // this.merkleRoot = merkleRoot.toString('hex');
+    //
+    // return this.hash = sha256(this.previousHash + this.height + this.nonce + this.merkleRoot).toString();
   }
+
 
   /**
    * 添加交易并处理交易函数 addTransaction
@@ -73,7 +87,7 @@ class Block {
     // 这行语句一定要加在if前面，不然不符合规则的交易会自动略过，比如lesson5里面的badtrx
     this.transactions.push(transaction.hash)
 
-    if (!this.utxoPool.isValidTransaction(transaction.miner, transaction.value)) {
+    if (!this.utxoPool.isValidTransaction(transaction)) {
       return false;
     }
 
@@ -82,7 +96,21 @@ class Block {
     this.hash = sha256(this.previousHash + this.height + this.nonce + transaction.hash).toString();
 
     return true;
-  }
+
+      // 基于默克尔树实现，还没看懂
+      // this.transactions.push(transaction);
+      //
+      // if (!this.utxoPool.isValidTransaction(transaction.miner, transaction.value)) {
+      //   return false;
+      // }
+      //
+      // this.utxoPool.handleTransaction(transaction);
+      //
+      // this.combinedTransactionsHash();
+      //
+      // return true;
+    }
+
 }
 
 export default Block
