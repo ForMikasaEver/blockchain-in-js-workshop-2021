@@ -32,7 +32,7 @@ class Trie {
 
         // 只要往根节点添加过子节点，便将结尾标识符设置为 1
         // if语句是为了防止重复操作
-        if (currentNode.isEndOfWord == -1) {
+        if (currentNode.isEndOfWord === -1) {
             currentNode.isEndOfWord = 1;
         }
 
@@ -67,7 +67,7 @@ class Trie {
         // 遍历到单词的末尾字符
         if (index === word.length) {
             // 如果该节点后面没有子节点，即最后一个节点,
-            if (node.isEndOfWord != 0) {
+            if (node.isEndOfWord !== 0) {
                 return false;
             }
             //将该节点设置为该链最后一个节点
@@ -102,6 +102,7 @@ trie.insert('app');
 trie.delete('apple');
 
 let key;
+
 for (key in trie) {
     console.log(key + " =>", trie[key])
 }

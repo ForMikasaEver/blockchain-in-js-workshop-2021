@@ -1,80 +1,85 @@
-const { keccak256 } = require('keccak256');
+//以下是test.js文件内容
 
-class MPTNode {
-    constructor() {
-        this.value = null; // 节点的值，用于存储账户数据和内容
-        this.children = {}; // 子节点映射表
-    }
-}
+// 导入 EthereumMPT 类和 keccak256、toBuffer 方法
+import EthereumMPT from './eth_mpt.cjs';
+import { keccak256 } from 'ethereumjs-util';
+import { toBuffer } from 'ethereumjs-util';
 
-class MPT {
-    constructor() {
-        this.root = new MPTNode(); // 根节点
-    }
+// 创建异步函数
+(async () => {
 
-    getAddressKey(address) {
-        // 将以太坊地址转换为索引键
-        return address.toLowerCase();
-    }
+// 创建 EthereumMPT 类的实例
+    const mpt = new EthereumMPT();
 
-    addOrUpdateAccount(address, data) {
-        const key = this.getAddressKey(address);
-        const hash = keccak256(data);
+// 定义第一个账户的地址、nonce、余额、代码哈希和存储根等参数
+    const address1 = '0x95222290dd7278aa3ddd389cc1e1d165cc4bafe5';
+    const nonce1 = 1;
+    const balance1 = 1000;
+    const codeHash1 = keccak256(toBuffer('0x636f646531')).toString('hex');
+    const storageRoot1 = keccak256(toBuffer('0x73746f7261676531')).toString('hex');
 
-        let currentNode = this.root;
-        for (let i = 0; i < key.length; i++) {
-            const char = key[i];
+// 定义第二个账户的地址、nonce、余额、代码哈希和存储根等参数
+// const address2 = '0x0a2f3b98c0652b7268b2e80f4d0c806cf56b5a79';
+// const nonce2 = 2;
+// const balance2 = 2000;
+// const codeHash2 = keccak256(toBuffer('code2')).toString('hex');
+// const storageRoot2 = keccak256(toBuffer('storage2')).toString('hex');
 
-            if (!currentNode.children[char]) {
-                currentNode.children[char] = new MPTNode();
-            }
+// 向 EthereumMPT 实例中插入第一个账户的账户信息
+    await mpt.putAccount(address1, nonce1, balance1, codeHash1, storageRoot1);
+// await mpt.putAccount(address2, nonce2, balance2, codeHash2, storageRoot2);
 
-            currentNode = currentNode.children[char];
-        }
+    console.log('Accounts added to MPT.');
 
-        currentNode.value = {
-            address,
-            data,
-            hash,
-        };
-    }
+// 获取 Merkle Patricia 树的根节点的哈希值并输出
+    const root = await mpt.getRoot();
+    console.log('MPT Root:', root);
 
-    verifyAccount(address, expectedData) {
-        const key = this.getAddressKey(address);
-        const expectedHash = keccak256(expectedData);
+// 验证第一个账户的余额是否正确并输出验证结果
+    const verified = await mpt.verifyAccount(address1, nonce1, balance1, codeHash1, storageRoot1);
+    console.log('Account verification result:', verified);
 
-        let currentNode = this.root;
-        for (let i = 0; i < key.length; i++) {
-            const char = key[i];
+})();
 
-            if (!currentNode.children[char]) {
-                return false; // 节点不存在，验证失败
-            }
+//以下是test.js文件内容
 
-            currentNode = currentNode.children[char];
-        }
+// 导入 EthereumMPT 类和 keccak256、toBuffer 方法
+import EthereumMPT from './eth_mpt.cjs';
+import { keccak256 } from 'ethereumjs-util';
+import { toBuffer } from 'ethereumjs-util';
 
-        if (!currentNode.value) {
-            return false; // 节点没有存储值，验证失败
-        }
+// 创建异步函数
+(async () => {
 
-        return currentNode.value.address === address && currentNode.value.hash === expectedHash;
-    }
-}
+// 创建 EthereumMPT 类的实例
+    const mpt = new EthereumMPT();
 
-// 示例用法
-const mpt = new MPT();
+// 定义第一个账户的地址、nonce、余额、代码哈希和存储根等参数
+    const address1 = '0x95222290dd7278aa3ddd389cc1e1d165cc4bafe5';
+    const nonce1 = 1;
+    const balance1 = 1000;
+    const codeHash1 = keccak256(toBuffer('0x636f646531')).toString('hex');
+    const storageRoot1 = keccak256(toBuffer('0x73746f7261676531')).toString('hex');
 
-const address1 = '0x95222290dd7278aa3ddd389cc1e1d165cc4bafe5';
-const data1 = 'Account data for address1';
-mpt.addOrUpdateAccount(address1, data1);
+// 定义第二个账户的地址、nonce、余额、代码哈希和存储根等参数
+// const address2 = '0x0a2f3b98c0652b7268b2e80f4d0c806cf56b5a79';
+// const nonce2 = 2;
+// const balance2 = 2000;
+// const codeHash2 = keccak256(toBuffer('code2')).toString('hex');
+// const storageRoot2 = keccak256(toBuffer('storage2')).toString('hex');
 
-const address2 = '0x1234567890abcdef1234567890abcdef12345678';
-const data2 = 'Account data for address2';
-mpt.addOrUpdateAccount(address2, data2);
+// 向 EthereumMPT 实例中插入第一个账户的账户信息
+    await mpt.putAccount(address1, nonce1, balance1, codeHash1, storageRoot1);
+// await mpt.putAccount(address2, nonce2, balance2, codeHash2, storageRoot2);
 
-console.log('MPT Root:', mpt.root);
+    console.log('Accounts added to MPT.');
 
-// 验证账户信息
-console.log('Verification for address1:', mpt.verifyAccount(address1, data1)); // true
-console.log('Verification for address2:', mpt.verifyAccount(address2, 'Invalid data')); // false
+// 获取 Merkle Patricia 树的根节点的哈希值并输出
+    const root = await mpt.getRoot();
+    console.log('MPT Root:', root);
+
+// 验证第一个账户的余额是否正确并输出验证结果
+    const verified = await mpt.verifyAccount(address1, nonce1, balance1, codeHash1, storageRoot1);
+    console.log('Account verification result:', verified);
+
+})();
