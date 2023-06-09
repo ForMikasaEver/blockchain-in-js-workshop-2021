@@ -174,7 +174,7 @@ const main = () => {
 
     thirdBlock.addTransaction(newTrx)
 
-     console.log(thirdBlock.utxoPool)
+    console.log(thirdBlock.utxoPool)
 
     assert(
         latestUTXOPool.utxos[receiverPubKey] &&
