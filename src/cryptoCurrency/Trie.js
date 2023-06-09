@@ -82,31 +82,38 @@ class Trie {
             return false;
         }
 
-        //根据word[index]键，去
-        const shouldDeleteChild = this._deleteHelper(node.children.get(char), word, index + 1);
-
-        if (shouldDeleteChild) {
-            node.children.delete(char);
-            return node.children.size === 0 && !node.isEndOfWord;
-        }
-
-        return false;
+       // 递归找到该单词的最后一个字符的节点，并标记该节点为非单词结尾
+    const shouldDeleteChild = this._deleteHelper(node.children.get(char), word, index + 1);
+    // 如果需要删除该子节点
+    if (shouldDeleteChild) {
+      // 删除该子节点
+      node.children.delete(char);
+      // 返回删除该子节点后，该节点是否还有其他子节点且不是其他单词的结尾
+      return node.children.size === 0 && !node.isEndOfWord;
     }
+
+    return false;
+  }
 }
 
-
+// 创建一个 Trie 实例
 const trie = new Trie();
+// 插入三个单词
 trie.insert('apple');
 trie.insert('banana');
 trie.insert('app');
+// 删除一个单词
 trie.delete('apple');
 
+
 let key;
+
+// 遍历 Trie 树，输出每个属性的值
 
 for (key in trie) {
     console.log(key + " =>", trie[key])
 }
-
+// 输出 Trie 树
 console.log(trie)
 
 // console.log(trie.value)
