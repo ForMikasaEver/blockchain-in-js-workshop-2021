@@ -28,6 +28,7 @@ class UTXOPool {
 
   // 处理交易函数
   handleTransaction(transaction) {
+
     // 因为第三个区块的utxoPool是复制的第二个区块，所以它没有coinbaseBeneficiary
     // 因此就把第三个区块的utxos第一个地址当作coinbaseBeneficiary
     const keys = Object.keys(this.utxos);
