@@ -84,12 +84,16 @@ class Block {
    * 需包含 UTXOPool 的更新与 hash 的更新
    */
   addTransaction(transaction) {
-    // 这行语句一定要加在if前面，不然不符合规则的交易会自动略过，比如lesson5里面的badtrx
-    this.transactions.push(transaction.hash)
-
     if (!this.utxoPool.isValidTransaction(transaction)) {
       return false;
     }
+
+    if (!transaction.hasValidSignature()) {
+      return false;
+    }
+
+    // 这行语句一定要加在if后面，不然不符合规则的交易会自动略过，比如lesson5里面的badtrx
+    this.transactions.push(transaction.hash)
 
     this.utxoPool.handleTransaction(transaction);
 
@@ -97,19 +101,28 @@ class Block {
 
     return true;
 
-      // 基于默克尔树实现，还没看懂
-      // this.transactions.push(transaction);
-      //
-      // if (!this.utxoPool.isValidTransaction(transaction.miner, transaction.value)) {
-      //   return false;
-      // }
-      //
-      // this.utxoPool.handleTransaction(transaction);
-      //
-      // this.combinedTransactionsHash();
-      //
-      // return true;
+    // 基于默克尔树实现，还没看懂
+    // this.transactions.push(transaction);
+    //
+    // if (!this.utxoPool.isValidTransaction(transaction.miner, transaction.value)) {
+    //   return false;
+    // }
+    //
+    // this.utxoPool.handleTransaction(transaction);
+    //
+    // this.combinedTransactionsHash();
+    //
+    // return true;
+  }
+
+  // 添加签名校验逻辑
+  isValidTransaction(transaction) {
+    if (!transaction.miner || !transaction.signature) {
+      return false;
     }
+
+    return transaction.hasValidSignature()
+  }
 
 }
 

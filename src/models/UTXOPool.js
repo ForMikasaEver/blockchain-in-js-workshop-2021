@@ -21,7 +21,7 @@ class UTXOPool {
 
   /**
    * 将当前 UXTO 的副本克隆
-    */
+   */
   clone() {
     return new UTXOPool({...this.utxos})
   }
@@ -36,6 +36,10 @@ class UTXOPool {
 
     if (!this.isValidTransaction(transaction)) {
       return
+    }
+
+    if (!transaction.hasValidSignature()) {
+      return;
     }
 
     // 判断交易的发起者是不是矿工，如果是矿工，手续费是先从发起者扣除，再给到接收者，因为矿工打包区块，接收者也是矿工，所有等于没有手续费
@@ -53,7 +57,7 @@ class UTXOPool {
 
         // 把receiverPubKey加入到UTXOPool里面
         this.addUTXO(transaction.receiverPubKey, transaction.value);
-       }
+      }
 
     }else {
       this.utxos[transaction.miner].amount -= transaction.value + transaction.fee
