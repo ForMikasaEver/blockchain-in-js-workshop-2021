@@ -14,6 +14,8 @@
 
 https://github.com/ForMikasaEver/blockchain-in-js-workshop-2021
 
+做前六次的时候没有想到把每次更新修改的内容要提交到分支里面，做到final的时候才意识到，但是之前的lesson1-lesson6的修改都已经无法再提交到分支上了，所以lesson1-lesson7的全部更新都在lesson1
+
 
 
 ## 第一课代码
@@ -233,6 +235,19 @@ https://github.com/ForMikasaEver/blockchain-in-js-workshop-2021/blob/fme-lesson1
 
 
 ## 结课报告
+
+### 代码 commint 地址
+
+https://github.com/ForMikasaEver/blockchain-in-js-workshop-2021/commit/9075908cf9e7ff79abe10f3f42e177f0adf5bd35
+
+
+
+
+### 代码截图
+
+![Vb6rRJ.png](https://i.imgloc.com/2023/06/16/Vb6rRJ.png)
+
+
 
 
 
